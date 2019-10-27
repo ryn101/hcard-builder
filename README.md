@@ -1,11 +1,11 @@
 ## Running the application
 First run the following command from the root of the project: 
 
-###`yarn install` 
+#### `yarn install` 
 
 Once that has complete, run the production build command
  
-###`yarn build-prod` 
+#### `yarn build-prod` 
 
 This is going to output the compile files into the build directory off the root directory. <br />
 Once complete, open up the `build/index.html` file within the build directory in Chrome to view the built application.
