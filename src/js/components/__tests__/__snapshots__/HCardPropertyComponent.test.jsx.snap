@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`once the hcard detail row has rendered renders with state correctly 1`] = `<span />`;

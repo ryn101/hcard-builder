@@ -1,0 +1,110 @@
+@import 'colours';
+@import 'mixins';
+
+$vcard-padding: 25px;
+$photo-wrapper-right: 10px;
+$photo-wrapper-width: 83px;
+
+.vcard {
+  width: 430px;
+  background-color: white;
+  border-bottom: 2px solid #9A9A9A;
+  height: 306px;
+  position: relative;
+
+  .type {
+    display: none;
+  }
+
+  .banner {
+    position: absolute;
+    top: -26px;
+    right: 5px;
+    color: #95A5A6;
+  }
+
+  .header {
+    height: 100px;
+    background-color: $sophisticated-navy;
+    padding: 54px $vcard-padding 0 $vcard-padding;
+
+    h1 {
+      font-size: 18pt;
+      margin: 0;
+      color: #fff;
+      font-family: Merriweather, Arial, serif;
+      width: calc(100% - #{($photo-wrapper-right * 2) + $photo-wrapper-width - $vcard-padding});
+      @include ellipsis();
+    }
+  }
+
+  .photo-wrapper {
+    border: 1px solid #9A9A9A;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    position: absolute;
+    right: $photo-wrapper-right;
+    top: 10px;
+    height: 104px;
+    width: $photo-wrapper-width;
+    overflow: hidden;
+    text-align: center;
+    background-color: #e3e3e3;
+
+    > img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .details {
+    display: block;
+    padding: $vcard-padding;
+    margin: 0;
+    font-style: normal;
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        border-bottom: 1px $on-the-line-grey solid;
+        padding-bottom: 1px;
+        justify-content: left;
+
+        &:not(:first-child) {
+          margin-top: 12px;
+        }
+      }
+    }
+
+    .detail {
+
+      width: 100%;
+
+      div > span {
+        display: inline-block;
+      }
+
+      $detail-label-width: 76px;
+
+      .label {
+        width: $detail-label-width;
+
+        color: $sophisticated-navy;
+        text-transform: uppercase;
+        font-size: 7.5pt;
+      }
+
+      .value {
+        @include ellipsis();
+        font-family: Merriweather, Arial, serif;
+        width: calc(100% - #{$detail-label-width});
+        vertical-align: text-bottom;
+        margin-bottom: -5px;
+        padding-bottom: 5px;
+      }
+    }
+  }
+}

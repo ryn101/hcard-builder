@@ -1,0 +1,48 @@
+.button {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  border-radius: 5px;
+  color: #FFF;
+  padding: 8px;
+  font-size: 16pt;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 80%;
+  }
+
+  &:active {
+    border-top-width: 2px;
+    border-bottom-width: 0;
+  }
+
+  &--grey {
+    background-color: $mellowing-grey;
+    border: solid 2px #3F515D;
+    border-left: none;
+    border-right: none;
+  }
+
+  &--blue {
+    background-color: $intriguing-blue;
+    border: solid 2px #2980B9;
+    border-left: none;
+    border-right: none;
+  }
+
+  &:not(:active) {
+    border-top-width: 0;
+  }
+}
+
+
+.file-upload-wrapper {
+  overflow: hidden;
+  position: relative;
+
+  > input[type=file] {
+    position: absolute;
+    visibility: hidden;
+  }
+}

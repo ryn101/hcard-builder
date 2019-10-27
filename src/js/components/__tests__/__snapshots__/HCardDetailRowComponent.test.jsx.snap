@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`once the hcard detail row has rendered renders with state correctly 1`] = `
+<li
+  className="flex-row flex-row--columns-1"
+>
+  <div
+    className="detail flex-column"
+    key="hcd-1"
+  >
+    <div>
+      <span
+        className="label"
+      >
+        Detail 1
+      </span>
+      <span
+        className="value"
+      >
+        <HCardPropertyComponent
+          className="Prop1"
+          hCardProperty={
+            HCardProperty {
+              "name": "Prop1",
+              "value": "Value1",
+            }
+          }
+          key="Prop1"
+          title="Value1"
+        />
+      </span>
+    </div>
+  </div>
+</li>
+`;

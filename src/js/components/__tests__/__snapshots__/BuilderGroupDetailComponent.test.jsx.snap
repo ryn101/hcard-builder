@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`once the builder group detail has rendered renders with state correctly 1`] = `
+<li
+  className="flex-column"
+>
+  <label
+    htmlFor="testDetail"
+  >
+    Test Detail
+  </label>
+  <input
+    name="testDetail"
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+</li>
+`;

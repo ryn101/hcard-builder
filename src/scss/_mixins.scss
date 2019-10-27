@@ -1,0 +1,34 @@
+/**
+ * Provides styling for the ellipsis
+ */
+@mixin ellipsis() {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/**
+ * Generates a set of flex column classes numbered from 1-10 which provide the ability to
+ * declare how many columns the flex row is expected to have
+ */
+@mixin flex-columns() {
+  $margin-base: 20px;
+
+  @for $i from 1 through 10 {
+    $margin-spacing: 0px;
+
+    @if $i > 1 {
+      $margin-spacing: ($margin-base / $i);
+    }
+
+    &.flex-row--columns-#{$i} .flex-column {
+      flex-basis: calc(#{(100 / $i) + '%'} - #{$margin-spacing});
+
+      @if $i > 1 {
+        &:not(:nth-child(#{$i}n)) {
+          margin-right: ($margin-base/($i - 1));
+        }
+      }
+    }
+  }
+}

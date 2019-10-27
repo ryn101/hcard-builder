@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`once the hcard has rendered renders with state correctly 1`] = `
+<div
+  className="vcard"
+>
+  <span
+    className="banner"
+  >
+    HCARD PREVIEW
+  </span>
+  <div
+    className="header"
+  >
+    <h1
+      className="fn"
+      title=""
+    />
+    <div
+      className="photo-wrapper"
+    >
+      <img
+        alt="avatar"
+        className="photo"
+        src="test-file-stub"
+      />
+    </div>
+  </div>
+  <div
+    className="adr details"
+  >
+    <ul>
+      <HCardDetailRowComponent
+        hCardDetailRow={
+          HCardDetailRow {
+            "details": Array [
+              HCardDetail {
+                "id": "hcd-7",
+                "label": "Email",
+                "properties": Array [
+                  HCardProperty {
+                    "name": "email",
+                    "value": undefined,
+                  },
+                ],
+                "propertiesSeparator": undefined,
+              },
+            ],
+            "id": "hcdr-6",
+          }
+        }
+        key="hcdr-6"
+      />
+      <HCardDetailRowComponent
+        hCardDetailRow={
+          HCardDetailRow {
+            "details": Array [
+              HCardDetail {
+                "id": "hcd-8",
+                "label": "Phone",
+                "properties": Array [
+                  HCardProperty {
+                    "name": "tel",
+                    "value": undefined,
+                  },
+                ],
+                "propertiesSeparator": undefined,
+              },
+            ],
+            "id": "hcdr-7",
+          }
+        }
+        key="hcdr-7"
+      />
+      <HCardDetailRowComponent
+        hCardDetailRow={
+          HCardDetailRow {
+            "details": Array [
+              HCardDetail {
+                "id": "hcd-9",
+                "label": "Address",
+                "properties": Array [
+                  HCardProperty {
+                    "name": "street-address",
+                    "value": "",
+                  },
+                ],
+                "propertiesSeparator": undefined,
+              },
+            ],
+            "id": "hcdr-8",
+          }
+        }
+        key="hcdr-8"
+      />
+      <HCardDetailRowComponent
+        hCardDetailRow={
+          HCardDetailRow {
+            "details": Array [
+              HCardDetail {
+                "id": "hcd-10",
+                "label": "",
+                "properties": Array [
+                  HCardProperty {
+                    "name": "locality",
+                    "value": undefined,
+                  },
+                  HCardProperty {
+                    "name": "region",
+                    "value": undefined,
+                  },
+                ],
+                "propertiesSeparator": ", ",
+              },
+            ],
+            "id": "hcdr-9",
+          }
+        }
+        key="hcdr-9"
+      />
+      <HCardDetailRowComponent
+        hCardDetailRow={
+          HCardDetailRow {
+            "details": Array [
+              HCardDetail {
+                "id": "hcd-11",
+                "label": "Postcode",
+                "properties": Array [
+                  HCardProperty {
+                    "name": "postal-code",
+                    "value": undefined,
+                  },
+                ],
+                "propertiesSeparator": undefined,
+              },
+              HCardDetail {
+                "id": "hcd-12",
+                "label": "Country",
+                "properties": Array [
+                  HCardProperty {
+                    "name": "country",
+                    "value": undefined,
+                  },
+                ],
+                "propertiesSeparator": undefined,
+              },
+            ],
+            "id": "hcdr-10",
+          }
+        }
+        key="hcdr-10"
+      />
+    </ul>
+  </div>
+</div>
+`;
