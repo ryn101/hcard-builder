@@ -64,24 +64,19 @@ $photo-wrapper-width: 83px;
     margin: 0;
     font-style: normal;
 
-    ul {
-      margin: 0;
-      padding: 0;
+    li {
+      border-bottom: 1px $on-the-line-grey solid;
+      padding-bottom: 1px;
+      justify-content: left;
 
-      li {
-        border-bottom: 1px $on-the-line-grey solid;
-        padding-bottom: 1px;
-        justify-content: left;
-
-        &:not(:first-child) {
-          margin-top: 12px;
-        }
+      &:not(:first-child) {
+        margin-top: 12px;
       }
     }
 
     .detail {
-
       width: 100%;
+      overflow: hidden;
 
       div > span {
         display: inline-block;
@@ -104,6 +99,7 @@ $photo-wrapper-width: 83px;
         vertical-align: text-bottom;
         margin-bottom: -5px;
         padding-bottom: 5px;
+        min-height: 23px;
       }
     }
   }

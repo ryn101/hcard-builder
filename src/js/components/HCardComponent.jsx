@@ -9,8 +9,8 @@ import '../../scss/HCard.scss';
 import profilePicture from '../../images/profile-default.png';
 
 class HCardComponent extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.hCardProps = Object.values(HCardPropertyType).reduce((result, name) => {
             // eslint-disable-next-line no-param-reassign
@@ -83,13 +83,11 @@ class HCardComponent extends Component {
                         <img alt="avatar" className="photo" src={avatarFileUrl} />
                     </div>
                 </div>
-                <div className="adr details">
-                    <ul>
-                        {
-                            this.renderDetails(this.hCardRows)
-                        }
-                    </ul>
-                </div>
+                <ul className="adr details">
+                    {
+                        this.renderDetails(this.hCardRows)
+                    }
+                </ul>
             </div>
         );
     }

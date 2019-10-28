@@ -18,7 +18,6 @@ exports[`once the hcard detail row has rendered renders with state correctly 1`]
         className="value"
       >
         <HCardPropertyComponent
-          className="Prop1"
           hCardProperty={
             HCardProperty {
               "name": "Prop1",
@@ -26,7 +25,6 @@ exports[`once the hcard detail row has rendered renders with state correctly 1`]
             }
           }
           key="Prop1"
-          title="Value1"
         />
       </span>
     </div>

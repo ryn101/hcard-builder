@@ -151,7 +151,7 @@ module.exports = function (webpackEnv, argv) {
             // Allow hot swapping of updated files
             isEnvProduction && new webpack.HotModuleReplacementPlugin(),
             // Clean output directory
-            new CleanWebpackPlugin(),
+            isEnvProduction && new CleanWebpackPlugin(),
             // Extract and minify css from JS
             new MiniCssExtractPlugin({
                 filename:

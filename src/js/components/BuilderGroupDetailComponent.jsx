@@ -23,7 +23,7 @@ class BuilderGroupDetailComponent extends Component {
                 <input
                     name={detailModelName}
                     onChange={this.onDetailUpdated}
-                    value={modelValue ? modelValue[groupModelName][detailModelName] : ''}
+                    value={modelValue ? modelValue[groupModelName][detailModelName] || '' : ''}
                     type="text"
                 />
             </li>

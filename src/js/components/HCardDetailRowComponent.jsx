@@ -17,8 +17,6 @@ const HCardDetailRowComponent = ({ hCardDetailRow }) => (
                                         <HCardPropertyComponent
                                             key={property.name}
                                             hCardProperty={property}
-                                            className={property.name}
-                                            title={property.value}
                                         />
                                     )).flatMap((value, index, array) => (
                                         // Add in the separator element
