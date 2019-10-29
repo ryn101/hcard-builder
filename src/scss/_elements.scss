@@ -36,13 +36,15 @@
   }
 }
 
-
 .file-upload-wrapper {
-  overflow: hidden;
   position: relative;
 
   > input[type=file] {
     position: absolute;
-    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
   }
 }

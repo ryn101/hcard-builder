@@ -74,6 +74,8 @@ class App extends Component {
         });
     };
 
+    onFormSubmission = (event) => event.preventDefault();
+
     render() {
         const { builderGroups, hCard, avatarFileUrl } = this.state;
 
@@ -81,28 +83,32 @@ class App extends Component {
             <>
                 <section>
                     <h1>hCard Builder</h1>
-                    {
-                        builderGroups.map((bg) => (
-                            <BuilderGroupComponent
-                                key={bg.id}
-                                builderGroup={bg}
-                                modelValue={hCard}
-                                onDetailUpdated={this.onDetailUpdated}
-                            />
-                        ))
-                    }
-                    <div className="    flex-row flex-row--responsive flex-row--columns-2">
-                        <div className="flex-column">
-                            {/* eslint-disable-next-line */}
-                            <label className="button button--grey file-upload-wrapper">
-                                <input onChange={this.onAvatarSelected} type="file" />
-                                <span>Upload Avatar</span>
-                            </label>
+                    <form name="hCardForm" onSubmit={this.onFormSubmission}>
+                        {
+                            builderGroups.map((bg) => (
+                                <BuilderGroupComponent
+                                    key={bg.id}
+                                    builderGroup={bg}
+                                    modelValue={hCard}
+                                    onDetailUpdated={this.onDetailUpdated}
+                                />
+                            ))
+                        }
+                        <div className="flex-row flex-row--columns-2">
+                            <div className="flex-column">
+
+                                <span className="file-upload-wrapper">
+                                    <input id="avatarFile" onChange={this.onAvatarSelected} type="file" />
+                                    <label htmlFor="avatarFile" className="button button--grey focusable">
+                                        Upload Avatar
+                                    </label>
+                                </span>
+                            </div>
+                            <div className="flex-column">
+                                <button type="submit" className="button button--blue">Create hCard</button>
+                            </div>
                         </div>
-                        <div className="flex-column">
-                            <span className="button button--blue">Create hCard</span>
-                        </div>
-                    </div>
+                    </form>
                 </section>
                 <div>
                     <HCardComponent hCard={hCard} avatarFileUrl={avatarFileUrl} />

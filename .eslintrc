@@ -16,6 +16,11 @@
         "react/jsx-indent-props": ["error", 4],
 
         // Allow blank lines
-        "no-trailing-spaces": [2, { "skipBlankLines": true }]
+        "no-trailing-spaces": [2, { "skipBlankLines": true }],
+
+        // Allow htmlfor without requiring nesting
+        "jsx-a11y/label-has-associated-control": [ 2, {
+            "assert": "htmlFor"
+        }]
     }
 }

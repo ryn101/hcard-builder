@@ -20,6 +20,12 @@ html, body, main {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  :focus {
+    &, & + * {
+      outline: rgb(112, 171, 245) auto 5px;
+    }
+  }
 }
 
 main {
