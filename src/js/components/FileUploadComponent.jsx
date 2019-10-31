@@ -1,15 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-/**
- *
- *
- * @param children
- * @param focusClass
- * @param onFileSelection
- * @returns {*}
- * @constructor
- */
 function FileUploadComponent({ children, focusClass, onFileSelection }) {
     return (
         <span className="file-upload-wrapper">
