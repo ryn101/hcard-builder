@@ -40,14 +40,22 @@ describe('once the builder group detail has rendered', () => {
         expect(builderGroupDetailNode).toMatchSnapshot();
     });
 
-    it('renders the title correctly', () => {
-        const label = builderGroupDetailNode.find('label');
-        expect(label.text()).toEqual(builderGroupDetail.description);
-        expect(label.prop('htmlFor')).toEqual(builderGroupDetail.modelName);
-    });
+    it('renders the title and input correctly', () => {
+        const idMatcher = new RegExp(`${builderGroupDetail.modelName}`);
 
-    it('renders the input correctly', () => {
+        const label = builderGroupDetailNode.find('label');
+        const forText = label.prop('htmlFor');
+        expect(label.text()).toEqual(builderGroupDetail.description);
+        expect(forText).toMatch(idMatcher);
+
         const input = builderGroupDetailNode.find('input');
-        expect(input.prop('name')).toEqual(builderGroupDetail.modelName);
+        const idText = input.prop('id');
+        const nameText = input.prop('name');
+        expect(idText).toMatch(idMatcher);
+        expect(nameText).toMatch(idMatcher);
+        expect(nameText).toEqual(idText);
+
+        // The label should reference the input
+        expect(idText).toEqual(forText);
     });
 });

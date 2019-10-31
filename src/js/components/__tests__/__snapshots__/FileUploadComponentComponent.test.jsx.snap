@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`once rendered renders with state correctly 1`] = `
+<span
+  className="file-upload-wrapper"
+>
+  <input
+    accept="image/*"
+    id="avatarFile"
+    onChange={[MockFunction]}
+    type="file"
+  />
+  <label
+    className="focusable"
+    htmlFor="avatarFile"
+  >
+    Upload
+  </label>
+</span>
+`;

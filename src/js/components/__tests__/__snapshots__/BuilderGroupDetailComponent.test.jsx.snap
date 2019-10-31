@@ -5,12 +5,13 @@ exports[`once the builder group detail has rendered renders with state correctly
   className="flex-column"
 >
   <label
-    htmlFor="testDetail"
+    htmlFor="builder_testDetail"
   >
     Test Detail
   </label>
   <input
-    name="testDetail"
+    id="builder_testDetail"
+    name="builder_testDetail"
     onChange={[Function]}
     type="text"
     value=""

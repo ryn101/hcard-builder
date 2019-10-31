@@ -9,7 +9,7 @@
   cursor: pointer;
 
   &:hover {
-    opacity: 80%;
+    opacity: 0.8;
   }
 
   &:active {
@@ -38,6 +38,11 @@
 
 .file-upload-wrapper {
   position: relative;
+
+  > label {
+    display: inline-block;
+    width: 100%;
+  }
 
   > input[type=file] {
     position: absolute;

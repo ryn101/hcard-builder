@@ -5,6 +5,7 @@ import BuilderGroup from '../BuilderGroup';
 import HCard from '../HCard';
 import BuilderGroupComponent from './BuilderGroupComponent';
 import HCardComponent from './HCardComponent';
+import FileUploadComponent from './FileUploadComponent';
 
 class App extends Component {
     constructor(props) {
@@ -97,12 +98,11 @@ class App extends Component {
                         <div className="flex-row flex-row--columns-2">
                             <div className="flex-column">
 
-                                <span className="file-upload-wrapper">
-                                    <input id="avatarFile" onChange={this.onAvatarSelected} type="file" />
-                                    <label htmlFor="avatarFile" className="button button--grey focusable">
+                                <FileUploadComponent onFileSelection={this.onAvatarSelected}>
+                                    <span className="button button--grey">
                                         Upload Avatar
-                                    </label>
-                                </span>
+                                    </span>
+                                </FileUploadComponent>
                             </div>
                             <div className="flex-column">
                                 <button type="submit" className="button button--blue">Create hCard</button>

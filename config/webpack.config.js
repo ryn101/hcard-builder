@@ -6,12 +6,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 const path = require('path');
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 
-module.exports = function (webpackEnv, argv) {
+module.exports = function exports(webpackEnv, argv) {
     const isEnvProduction = argv.mode === 'production';
 
     return {
@@ -48,7 +50,7 @@ module.exports = function (webpackEnv, argv) {
                         },
 
                         /* ******************** *
-                         * SASS Loader
+                         * CSS Loader
                          * ******************** */
                         {
                             test: /\.(sass|scss|css)$/,
@@ -61,6 +63,15 @@ module.exports = function (webpackEnv, argv) {
                                     },
                                 },
                                 'css-loader',
+                                {
+                                    loader: 'postcss-loader',
+                                    options: {
+                                        plugins: [
+                                            autoprefixer,
+                                            cssnano,
+                                        ],
+                                    },
+                                },
                                 'sass-loader',
                             ],
                         },
@@ -198,6 +209,7 @@ module.exports = function (webpackEnv, argv) {
             port: 3000,
             hotOnly: true,
             contentBase: path.join(__dirname, '../build'),
+            host: '0.0.0.0',
         },
     };
 };

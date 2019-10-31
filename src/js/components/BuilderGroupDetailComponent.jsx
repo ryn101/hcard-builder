@@ -17,11 +17,14 @@ class BuilderGroupDetailComponent extends Component {
             modelValue,
         } = this.props;
 
+        const prefixedModelName = `builder_${detailModelName}`;
+
         return (
             <li className="flex-column">
-                <label htmlFor={detailModelName}>{description}</label>
+                <label htmlFor={prefixedModelName}>{description}</label>
                 <input
-                    name={detailModelName}
+                    id={prefixedModelName}
+                    name={prefixedModelName}
                     onChange={this.onDetailUpdated}
                     value={modelValue ? modelValue[groupModelName][detailModelName] || '' : ''}
                     type="text"
