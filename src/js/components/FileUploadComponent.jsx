@@ -10,7 +10,6 @@ function FileUploadComponent({ children, focusClass, onFileSelection }) {
     );
 }
 
-
 FileUploadComponent.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),

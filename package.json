@@ -62,7 +62,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "webfontloader": "^1.6.28"
+    "webfontloader": "^1.6.28",
+    "classnames": "^2.2.6"
   },
   "scripts": {
     "start": "webpack-dev-server --mode development --config config/webpack.config.js",
