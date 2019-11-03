@@ -18,48 +18,36 @@ function HCard(props) {
         <section className="vcard">
             <header className="vcard__header">
                 <h2 className="vcard__heading fn" title={fullName}>{fullName}</h2>
-                <div className="vcard__photo-wrapper">
+                <figure className="vcard__photo-wrapper">
                     <img alt="avatar" className="photo" src={avatarFileUrl} />
-                </div>
+                </figure>
             </header>
             <span className="vcard__banner">HCARD PREVIEW</span>
-            <address className="adr">
-                <ul className="vcard__details">
-                    <li className="vcard__details-row flex-row flex-row--columns-1">
-                        <HCardDetail label="Email" className="flex-row__column">
-                            <HCardProperty name="email" value={hCard.email} />
-                        </HCardDetail>
-                    </li>
-                    <li className="vcard__details-row flex-row flex-row--columns-1">
-                        <HCardDetail label="Phone" className="flex-row__column">
-                            <HCardProperty name="tel">
-                                <HCardProperty name="type" value="home" />
-                                { hCard.phone }
-                            </HCardProperty>
-                        </HCardDetail>
-                    </li>
-                    <li className="vcard__details-row flex-row flex-row--columns-1">
-                        <HCardDetail label="Address" className="flex-row__column">
-                            <HCardProperty name="street-address" value={streetAddress} />
-                        </HCardDetail>
-                    </li>
-                    <li className="vcard__details-row flex-row flex-row--columns-1">
-                        <HCardDetail className="flex-row__column">
-                            <HCardProperty name="locality" value={hCard.suburb} />
-                            <span>{hCard.suburb && hCard.state ? ', ' : ''}</span>
-                            <HCardProperty name="region" value={state.name} abbreviation={state.abbreviation} />
-                        </HCardDetail>
-                    </li>
-                    <li className="vcard__details-row flex-row flex-row--columns-2">
-                        <HCardDetail label="Post Code" className="flex-row__column">
-                            <HCardProperty name="postal-code" value={hCard.postcode} />
-                        </HCardDetail>
-                        <HCardDetail label="Country" className="flex-row__column">
-                            <HCardProperty name="country" value={hCard.country} />
-                        </HCardDetail>
-                    </li>
-                </ul>
-            </address>
+            <dl className="vcard__details adr">
+                <HCardDetail label="Email">
+                    <HCardProperty name="email" value={hCard.email} />
+                </HCardDetail>
+                <HCardDetail label="Phone">
+                    <HCardProperty name="tel">
+                        <HCardProperty name="type" value="home" />
+                        { hCard.phone }
+                    </HCardProperty>
+                </HCardDetail>
+                <HCardDetail label="Address">
+                    <HCardProperty name="street-address" value={streetAddress} />
+                </HCardDetail>
+                <HCardDetail>
+                    <HCardProperty name="locality" value={hCard.suburb} />
+                    <span>{hCard.suburb && hCard.state ? ', ' : ''}</span>
+                    <HCardProperty name="region" value={state.name} abbreviation={state.abbreviation} />
+                </HCardDetail>
+                <HCardDetail label="Post Code" columns={2}>
+                    <HCardProperty name="postal-code" value={hCard.postcode} />
+                </HCardDetail>
+                <HCardDetail label="Country" columns={2}>
+                    <HCardProperty name="country" value={hCard.country} />
+                </HCardDetail>
+            </dl>
         </section>
     );
 }

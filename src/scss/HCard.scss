@@ -34,6 +34,7 @@ $photo-wrapper-width: 83px;
     margin: 0;
     color: #fff;
     font-family: Merriweather, Arial, serif;
+    padding-bottom: 5px;
     width: calc(100% - #{($photo-wrapper-right * 2) + $photo-wrapper-width - $vcard-padding});
     @include ellipsis();
   }
@@ -50,6 +51,7 @@ $photo-wrapper-width: 83px;
     overflow: hidden;
     text-align: center;
     background-color: #e3e3e3;
+    margin: 0;
 
     .photo {
       height: 100%;
@@ -59,26 +61,33 @@ $photo-wrapper-width: 83px;
   }
 
   &__details {
-    display: block;
+    display: flex;
+    flex-flow: wrap;
     padding: $vcard-padding;
     margin: 0;
     font-style: normal;
 
-    &-row {
+    .detail {
+      width: 100%;
+      overflow: hidden;
+      margin: 0;
       border-bottom: 1px $on-the-line-grey solid;
       padding-bottom: 1px;
-      justify-content: left;
+
+      $detail-label-width: 76px;
+
+      &--columns-2 {
+        width: 50%;
+        padding-right: 20px;
+
+        & + .detail--columns-2 {
+          padding-right: 0;
+        }
+      }
 
       &:not(:first-child) {
         margin-top: 12px;
       }
-    }
-
-    .detail {
-      width: 100%;
-      overflow: hidden;
-
-      $detail-label-width: 76px;
 
       &__label {
         display: inline-block;
@@ -86,6 +95,7 @@ $photo-wrapper-width: 83px;
         color: $sophisticated-navy;
         text-transform: uppercase;
         font-size: 7.5pt;
+        margin: 0;
       }
 
       &__value {
@@ -94,7 +104,7 @@ $photo-wrapper-width: 83px;
         display: inline-block;
         width: calc(100% - #{$detail-label-width});
         vertical-align: text-bottom;
-        margin-bottom: -5px;
+        margin:0 0 -5px;
         padding-bottom: 5px;
         min-height: 23px;
       }

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`once rendered renders with state correctly 1`] = `
+<div
+  className="detail detail--columns-1"
+>
+  <dt
+    className="detail__label"
+  >
+    Detail label
+  </dt>
+  <dd
+    className="detail__value"
+  >
+    <HCardProperty
+      key="1"
+      name="property-1"
+      value=""
+    />
+    <span
+      key="2"
+    />
+    <HCardProperty
+      key="2"
+      name="property-2"
+      value=""
+    />
+  </dd>
+</div>
+`;

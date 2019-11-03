@@ -2,16 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const HCardDetail = ({ label, children, className }) => (
-    <div className={classNames('detail', className)}>
-        <div>
-            <span className="detail__label">{ label }</span>
-            <span className="detail__value">
-                {
-                    children
-                }
-            </span>
-        </div>
+
+const HCardDetail = ({ label, children, columns }) => (
+    <div className={classNames('detail', `detail--columns-${columns}`)}>
+        <dt className="detail__label">{ label }</dt>
+        <dd className="detail__value">
+            {
+                children
+            }
+        </dd>
     </div>
 );
 
@@ -22,12 +21,12 @@ HCardDetail.propTypes = {
         PropTypes.string,
     ]).isRequired,
     label: PropTypes.string,
-    className: PropTypes.string,
+    columns: PropTypes.oneOf([1, 2]),
 };
 
 HCardDetail.defaultProps = {
     label: null,
-    className: '',
+    columns: 1,
 };
 
 export default HCardDetail;

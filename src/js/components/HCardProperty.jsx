@@ -1,6 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Wraps up the logic needed to display a hCard property. The name of the property is added
+ * as a class to the component and the title is set to the specified value.
+ *
+ * Additionally supports property nesting, and abbreviation declaration for use with the abbr tag.
+ * If child elements are provided then the value and abbreviation properties are disregarded.
+ */
 function HCardProperty(props) {
     const {
         name,
