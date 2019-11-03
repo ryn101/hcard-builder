@@ -7,7 +7,7 @@
 
   @include flex-columns();
 
-  .flex-column {
+  @at-root &__column {
     display: flex;
     flex-basis: 100%;
     flex-direction: column;

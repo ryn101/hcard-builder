@@ -1,6 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Adapter from 'enzyme-adapter-react-16';
+import { configure, shallow } from 'enzyme';
 import App from '../App';
+import HCard from '../HCard';
+import HCardBuilderComponent from '../HCardBuilder';
+
+configure({ adapter: new Adapter() });
 
 it('renders without crashing', () => {
     const div = document.createElement('div');
@@ -12,17 +18,17 @@ describe('once rendered', () => {
     let appNode;
 
     beforeEach(() => {
-        appNode = document.createElement('div');
-        ReactDOM.render(<App />, appNode);
+        appNode = shallow(
+            <App />,
+        );
     });
 
-    it('displays builder groups and their details', () => {
-        const groups = appNode.querySelectorAll('.builder-group');
-        expect(groups.length).toBeGreaterThan(0);
+    it('renders with state correctly', () => {
+        expect(appNode).toMatchSnapshot();
+    });
 
-        groups.forEach((group) => {
-            const details = group.querySelectorAll('ul li');
-            expect(details.length).toBeGreaterThan(0);
-        });
+    it('displays the builder and hcard', () => {
+        expect(appNode.exists(HCardBuilderComponent)).toBeTruthy();
+        expect(appNode.exists(HCard)).toBeTruthy();
     });
 });

@@ -1,60 +1,26 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
 import '../../scss/App.scss';
-import BuilderGroup from '../BuilderGroup';
-import HCard from '../HCard';
-import BuilderGroupComponent from './BuilderGroupComponent';
-import HCardComponent from './HCardComponent';
-import FileUploadComponent from './FileUploadComponent';
-import ButtonComponent from './ButtonComponent';
+import HCard from './HCard';
+import HCardDetails from '../HCardDetails';
+import HCardBuilderComponent from './HCardBuilder';
 
 class App extends Component {
     constructor(props) {
         super(props);
 
-        const hCard = new HCard();
-
-        // Specify overrides for detail names
-        const detailNameOverrides = {
-            houseNumber: 'House Name or #',
+        this.state = {
+            hCard: new HCardDetails(),
+            avatarFileUrl: undefined,
         };
-
-        // Build the groups and their corresponding details based off the hCard class properties
-        // This is only needed to be constructed once, hence located within the constructor,
-        // as the properties of the hCard are assumed to not change once initialised.
-        const builderGroups = Object.entries(hCard)
-            .map(([hCardSectionName, hCardSectionDetails]) => {
-                const builderGroup = new BuilderGroup(
-                    _.startCase(hCardSectionName),
-                    hCardSectionName,
-                );
-
-                // Build the group details
-                Object.entries(hCardSectionDetails)
-                    .forEach(([hCardDetailName, hCardDetailValue]) => {
-                        builderGroup.addDetail(
-                            detailNameOverrides[hCardDetailName] || _.startCase(hCardDetailName),
-                            hCardDetailName,
-                            hCardDetailValue,
-                        );
-                    });
-
-                return builderGroup;
-            });
-
-        this.state = { builderGroups, hCard };
     }
 
     /**
-     * Event for handling the update of an individual builder group detail component
-     *
-     * @param groupModel The builder group model name
-     * @param detailModel The builder group detail model name
-     * @param modelValue The builder group detail updated model value
+     * Event for handling the update of a hcard builder field
      */
-    onDetailUpdated = (groupModel, detailModel, modelValue) => {
+    onFieldUpdate = (fieldId, fieldValue) => {
         const { hCard } = this.state;
-        hCard[groupModel][detailModel] = modelValue;
+
+        hCard[fieldId] = fieldValue;
 
         this.setState({ hCard });
     };
@@ -62,9 +28,9 @@ class App extends Component {
     /**
      * Event for handling the selection of an avatar via the file input
      *
-     * @param event The file input selection event
+     * @param fileUrl The file URL
      */
-    onAvatarSelected = (event) => {
+    onAvatarSelected = (fileUrl) => {
         const { avatarFileUrl } = this.state;
 
         if (avatarFileUrl) {
@@ -72,44 +38,24 @@ class App extends Component {
         }
 
         this.setState({
-            avatarFileUrl: URL.createObjectURL(event.target.files[0]),
+            avatarFileUrl: URL.createObjectURL(fileUrl),
         });
     };
 
     onFormSubmission = (event) => event.preventDefault();
 
     render() {
-        const { builderGroups, hCard, avatarFileUrl } = this.state;
+        const { hCard, avatarFileUrl } = this.state;
 
         return (
             <>
-                <section>
-                    <h1>hCard Builder</h1>
-                    <form name="hCardForm" onSubmit={this.onFormSubmission}>
-                        {
-                            builderGroups.map((bg) => (
-                                <BuilderGroupComponent
-                                    key={bg.id}
-                                    builderGroup={bg}
-                                    modelValue={hCard}
-                                    onDetailUpdated={this.onDetailUpdated}
-                                />
-                            ))
-                        }
-                        <div className="flex-row flex-row--columns-2">
-                            <div className="flex-column">
-                                <FileUploadComponent onFileSelection={this.onAvatarSelected}>
-                                    <ButtonComponent tag="span">Upload Avatar</ButtonComponent>
-                                </FileUploadComponent>
-                            </div>
-                            <div className="flex-column">
-                                <ButtonComponent type="submit" colour="blue">Create hCard</ButtonComponent>
-                            </div>
-                        </div>
-                    </form>
-                </section>
-                <div>
-                    <HCardComponent hCard={hCard} avatarFileUrl={avatarFileUrl} />
+                <HCardBuilderComponent
+                    onFieldUpdate={this.onFieldUpdate}
+                    onFormSubmission={this.onFormSubmission}
+                    onAvatarSelected={this.onAvatarSelected}
+                />
+                <div className="hcard-preview">
+                    <HCard hCard={hCard} avatarFileUrl={avatarFileUrl} />
                 </div>
             </>
         );

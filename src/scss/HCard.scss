@@ -16,29 +16,29 @@ $photo-wrapper-width: 83px;
     display: none;
   }
 
-  .banner {
+  &__banner {
     position: absolute;
     top: -26px;
     right: 5px;
     color: #95A5A6;
   }
 
-  .header {
+  &__header {
     height: 100px;
     background-color: $sophisticated-navy;
     padding: 54px $vcard-padding 0 $vcard-padding;
-
-    h1 {
-      font-size: 18pt;
-      margin: 0;
-      color: #fff;
-      font-family: Merriweather, Arial, serif;
-      width: calc(100% - #{($photo-wrapper-right * 2) + $photo-wrapper-width - $vcard-padding});
-      @include ellipsis();
-    }
   }
 
-  .photo-wrapper {
+  &__heading {
+    font-size: 18pt;
+    margin: 0;
+    color: #fff;
+    font-family: Merriweather, Arial, serif;
+    width: calc(100% - #{($photo-wrapper-right * 2) + $photo-wrapper-width - $vcard-padding});
+    @include ellipsis();
+  }
+
+  &__photo-wrapper {
     border: 1px solid #9A9A9A;
     border-right-width: 2px;
     border-bottom-width: 2px;
@@ -51,20 +51,20 @@ $photo-wrapper-width: 83px;
     text-align: center;
     background-color: #e3e3e3;
 
-    > img {
+    .photo {
       height: 100%;
       width: 100%;
       object-fit: cover;
     }
   }
 
-  .details {
+  &__details {
     display: block;
     padding: $vcard-padding;
     margin: 0;
     font-style: normal;
 
-    li {
+    &-row {
       border-bottom: 1px $on-the-line-grey solid;
       padding-bottom: 1px;
       justify-content: left;
@@ -78,23 +78,20 @@ $photo-wrapper-width: 83px;
       width: 100%;
       overflow: hidden;
 
-      div > span {
-        display: inline-block;
-      }
-
       $detail-label-width: 76px;
 
-      .label {
+      &__label {
+        display: inline-block;
         width: $detail-label-width;
-
         color: $sophisticated-navy;
         text-transform: uppercase;
         font-size: 7.5pt;
       }
 
-      .value {
+      &__value {
         @include ellipsis();
         font-family: Merriweather, Arial, serif;
+        display: inline-block;
         width: calc(100% - #{$detail-label-width});
         vertical-align: text-bottom;
         margin-bottom: -5px;

@@ -2,30 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import HCard from '../../HCard';
-import HCardComponent from '../HCardComponent';
-import Unique from '../../Unique';
+import HCardDetails from '../../HCardDetails';
+import HCard from '../HCard';
 
 configure({ adapter: new Adapter() });
 
-beforeAll(() => {
-    Unique.resetCounters();
-});
-
 it('renders the hCard without crashing', () => {
-    const hCard = new HCard();
+    const hCard = new HCardDetails();
     const div = document.createElement('div');
-    ReactDOM.render(<HCardComponent hCard={hCard} />, div);
+    ReactDOM.render(<HCard hCard={hCard} />, div);
     ReactDOM.unmountComponentAtNode(div);
 });
 
-describe('once the hcard has rendered', () => {
+describe('once rendered', () => {
     let hCardNode;
     let hCard;
 
     beforeEach(() => {
-        hCard = new HCard();
-        hCardNode = shallow(<HCardComponent hCard={hCard} />);
+        hCard = new HCardDetails();
+        hCardNode = shallow(<HCard hCard={hCard} />);
     });
 
     it('renders with state correctly', () => {
@@ -36,10 +31,9 @@ describe('once the hcard has rendered', () => {
         const givenName = 'Ryan';
         const surname = 'O\'Connor';
 
-        hCard.personalDetails.givenName = givenName;
-        hCard.personalDetails.surname = surname;
+        hCard.givenName = givenName;
+        hCard.surname = surname;
         hCardNode.setProps({ hCard });
-        hCardNode.update();
 
         const fullNameNode = hCardNode.find('.fn');
         expect(fullNameNode.text()).toEqual(`${givenName} ${surname}`);

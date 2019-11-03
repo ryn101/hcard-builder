@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import ButtonComponent from '../ButtonComponent';
+import Button from '../Button';
 
 configure({ adapter: new Adapter() });
 
 it('renders the button component without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-        <ButtonComponent>Button Text</ButtonComponent>,
+        <Button>Button Text</Button>,
         div,
     );
     ReactDOM.unmountComponentAtNode(div);
@@ -23,7 +23,7 @@ describe('once rendered', () => {
 
     beforeEach(() => {
         buttonNode = shallow(
-            <ButtonComponent colour={buttonColour}>{buttonText}</ButtonComponent>,
+            <Button colour={buttonColour}>{buttonText}</Button>,
         );
     });
 
@@ -43,10 +43,14 @@ describe('once rendered', () => {
         expect(buttonNode.hasClass(getButtonColour(buttonColour))).toBeTruthy();
     });
 
-    it('supports different tags', () => {
+    it('supports different and rejects unsupported tags', () => {
         const tag = 'span';
-        buttonNode.setProps({ tag });
 
+        buttonNode.setProps({ as: tag });
         expect(buttonNode.name()).toEqual(tag);
+
+        expect(() => {
+            buttonNode.setProps({ as: 'unsupportedtag' });
+        }).toThrow();
     });
 });

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`once the hcard property has rendered renders with state correctly 1`] = `
+<span
+  className="property-name"
+  title="Property Value"
+>
+  Property Value
+</span>
+`;
+
+exports[`once the hcard property with nesting has rendered renders with nested state correctly 1`] = `
+<span
+  className="property-name"
+  title=""
+>
+  <HCardProperty
+    name="nested-property"
+    value="Nested Value"
+  />
+</span>
+`;

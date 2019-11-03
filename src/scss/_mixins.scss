@@ -21,7 +21,7 @@
       $margin-spacing: ($margin-base / $i);
     }
 
-    &.flex-row--columns-#{$i} .flex-column {
+    &.flex-row--columns-#{$i} .flex-row__column {
       flex-basis: calc(#{(100 / $i) + '%'} - #{$margin-spacing});
 
       @if $i > 1 {

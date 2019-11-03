@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`once rendered renders with state correctly 1`] = `
+<section
+  className="vcard"
+>
+  <header
+    className="vcard__header"
+  >
+    <h2
+      className="vcard__heading fn"
+      title=""
+    />
+    <div
+      className="vcard__photo-wrapper"
+    >
+      <img
+        alt="avatar"
+        className="photo"
+        src="test-file-stub"
+      />
+    </div>
+  </header>
+  <span
+    className="vcard__banner"
+  >
+    HCARD PREVIEW
+  </span>
+  <address
+    className="adr"
+  >
+    <ul
+      className="vcard__details"
+    >
+      <li
+        className="vcard__details-row flex-row flex-row--columns-1"
+      >
+        <HCardDetail
+          className="flex-row__column"
+          label="Email"
+        >
+          <HCardProperty
+            name="email"
+            value=""
+          />
+        </HCardDetail>
+      </li>
+      <li
+        className="vcard__details-row flex-row flex-row--columns-1"
+      >
+        <HCardDetail
+          className="flex-row__column"
+          label="Phone"
+        >
+          <HCardProperty
+            name="tel"
+            value=""
+          >
+            <HCardProperty
+              name="type"
+              value="home"
+            />
+          </HCardProperty>
+        </HCardDetail>
+      </li>
+      <li
+        className="vcard__details-row flex-row flex-row--columns-1"
+      >
+        <HCardDetail
+          className="flex-row__column"
+          label="Address"
+        >
+          <HCardProperty
+            name="street-address"
+            value=""
+          />
+        </HCardDetail>
+      </li>
+      <li
+        className="vcard__details-row flex-row flex-row--columns-1"
+      >
+        <HCardDetail
+          className="flex-row__column"
+          label={null}
+        >
+          <HCardProperty
+            name="locality"
+            value=""
+          />
+          <span />
+          <HCardProperty
+            abbreviation={null}
+            name="region"
+            value=""
+          />
+        </HCardDetail>
+      </li>
+      <li
+        className="vcard__details-row flex-row flex-row--columns-2"
+      >
+        <HCardDetail
+          className="flex-row__column"
+          label="Post Code"
+        >
+          <HCardProperty
+            name="postal-code"
+            value=""
+          />
+        </HCardDetail>
+        <HCardDetail
+          className="flex-row__column"
+          label="Country"
+        >
+          <HCardProperty
+            name="country"
+            value=""
+          />
+        </HCardDetail>
+      </li>
+    </ul>
+  </address>
+</section>
+`;

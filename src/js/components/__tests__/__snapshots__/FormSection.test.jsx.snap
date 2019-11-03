@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`once rendered renders with state correctly 1`] = `
+<section
+  className="form__section"
+>
+  <h2
+    className="form__title"
+  >
+    The title it should have
+  </h2>
+  <span
+    key="1"
+  />
+  <span
+    key="2"
+  />
+</section>
+`;

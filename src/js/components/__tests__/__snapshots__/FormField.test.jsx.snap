@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`once rendered renders with state correctly 1`] = `
+<div
+  className="form__field"
+>
+  <label
+    className="form__label"
+    htmlFor="formInput"
+  >
+    The input label description
+  </label>
+  <input
+    id="formInput"
+    onChange={[MockFunction]}
+  />
+</div>
+`;
+
+exports[`once rendered shorthand renders with state correctly 1`] = `
+<div
+  className="form__field"
+>
+  <label
+    className="form__label"
+    htmlFor="formInput"
+  >
+    The input label description
+  </label>
+  <input
+    id="formInput"
+    onChange={[MockFunction]}
+    type="text"
+  />
+</div>
+`;

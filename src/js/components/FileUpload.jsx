@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function FileUploadComponent({ children, focusClass, onFileSelection }) {
+function FileUpload({ children, focusClass, onFileSelection }) {
     return (
         <span className="file-upload-wrapper">
             <input id="avatarFile" onChange={onFileSelection} type="file" accept="image/*" />
@@ -10,7 +10,7 @@ function FileUploadComponent({ children, focusClass, onFileSelection }) {
     );
 }
 
-FileUploadComponent.propTypes = {
+FileUpload.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node,
@@ -19,8 +19,8 @@ FileUploadComponent.propTypes = {
     onFileSelection: PropTypes.func.isRequired,
 };
 
-FileUploadComponent.defaultProps = {
+FileUpload.defaultProps = {
     focusClass: 'focusable',
 };
 
-export default FileUploadComponent;
+export default FileUpload;

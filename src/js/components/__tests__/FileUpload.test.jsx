@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import FileUploadComponent from '../FileUploadComponent';
+import FileUpload from '../FileUpload';
 
 configure({ adapter: new Adapter() });
 
 it('renders the file upload component without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-        <FileUploadComponent onFileSelection={()=>{}}>Upload</FileUploadComponent>,
+        <FileUpload onFileSelection={() => {}}>Upload</FileUpload>,
         div,
     );
     ReactDOM.unmountComponentAtNode(div);
@@ -22,7 +22,7 @@ describe('once rendered', () => {
     beforeEach(() => {
         fileSelected = jest.fn();
         fileUploadedNode = shallow(
-            <FileUploadComponent onFileSelection={fileSelected}>Upload</FileUploadComponent>,
+            <FileUpload onFileSelection={fileSelected}>Upload</FileUpload>,
         );
     });
 

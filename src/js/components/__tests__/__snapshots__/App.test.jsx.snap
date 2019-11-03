@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`once rendered renders with state correctly 1`] = `
+<Fragment>
+  <HCardBuilderComponent
+    onAvatarSelected={[Function]}
+    onFieldUpdate={[Function]}
+    onFormSubmission={[Function]}
+  />
+  <div
+    className="hcard-preview"
+  >
+    <HCard
+      avatarFileUrl="test-file-stub"
+      hCard={
+        HCardDetails {
+          "country": undefined,
+          "email": undefined,
+          "givenName": undefined,
+          "houseNameOrNumber": undefined,
+          "phone": undefined,
+          "postcode": undefined,
+          "state": undefined,
+          "street": undefined,
+          "suburb": undefined,
+          "surname": undefined,
+        }
+      }
+    />
+  </div>
+</Fragment>
+`;
