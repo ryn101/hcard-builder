@@ -28,7 +28,7 @@ function FormField({
             }
             {
                 children
-                    // If a child element is provided as a child, then set the field id
+                    // If a child input element is provided, then set the field id
                     ? React.cloneElement(children, { id: fieldId })
                     : <input id={fieldId} type={type} onChange={onFieldChange} />
             }

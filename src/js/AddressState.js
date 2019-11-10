@@ -8,8 +8,9 @@
 class AddressState {
     constructor(abbreviation) {
         let stateName;
+        const cleanedAbbreviation = abbreviation ? abbreviation.toUpperCase() : null;
 
-        switch (abbreviation) {
+        switch (cleanedAbbreviation) {
             case 'NSW':
                 stateName = 'New South Wales';
                 break;

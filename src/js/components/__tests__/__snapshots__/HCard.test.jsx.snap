@@ -1,99 +1,266 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`once rendered renders with state correctly 1`] = `
-<section
-  className="vcard"
+<HCard
+  avatarFileUrl="test-file-stub"
+  hCard={
+    HCardDetails {
+      "country": undefined,
+      "email": undefined,
+      "givenName": undefined,
+      "houseNameOrNumber": undefined,
+      "phone": undefined,
+      "postcode": undefined,
+      "state": undefined,
+      "street": undefined,
+      "suburb": undefined,
+      "surname": undefined,
+    }
+  }
 >
-  <header
-    className="vcard__header"
+  <section
+    className="vcard"
   >
-    <h2
-      className="vcard__heading fn"
-      title=""
-    />
-    <figure
-      className="vcard__photo-wrapper"
-    >
-      <img
-        alt="avatar"
-        className="photo"
-        src="test-file-stub"
-      />
-    </figure>
-  </header>
-  <span
-    className="vcard__banner"
-  >
-    HCARD PREVIEW
-  </span>
-  <dl
-    className="vcard__details adr"
-  >
-    <HCardDetail
-      columns={1}
-      label="Email"
+    <header
+      className="vcard__header"
     >
       <HCardProperty
-        name="email"
-        value=""
-      />
-    </HCardDetail>
-    <HCardDetail
-      columns={1}
-      label="Phone"
-    >
-      <HCardProperty
-        name="tel"
+        as="h2"
+        className="vcard__heading"
+        name="fn"
         value=""
       >
-        <HCardProperty
-          name="type"
-          value="home"
+        <h2
+          className="fn vcard__heading"
+          title=""
         />
       </HCardProperty>
-    </HCardDetail>
-    <HCardDetail
-      columns={1}
-      label="Address"
+      <figure
+        className="vcard__photo-wrapper"
+      >
+        <img
+          alt="avatar"
+          className="photo"
+          src="test-file-stub"
+        />
+      </figure>
+    </header>
+    <span
+      className="vcard__banner"
     >
-      <HCardProperty
-        name="street-address"
-        value=""
-      />
-    </HCardDetail>
-    <HCardDetail
-      columns={1}
-      label={null}
+      HCARD PREVIEW
+    </span>
+    <HCardProperty
+      as="dl"
+      className="vcard__details"
+      name="adr"
+      value=""
     >
-      <HCardProperty
-        name="locality"
-        value=""
-      />
-      <span />
-      <HCardProperty
-        abbreviation={null}
-        name="region"
-        value=""
-      />
-    </HCardDetail>
-    <HCardDetail
-      columns={2}
-      label="Post Code"
-    >
-      <HCardProperty
-        name="postal-code"
-        value=""
-      />
-    </HCardDetail>
-    <HCardDetail
-      columns={2}
-      label="Country"
-    >
-      <HCardProperty
-        name="country"
-        value=""
-      />
-    </HCardDetail>
-  </dl>
-</section>
+      <dl
+        className="adr vcard__details"
+        title=""
+      >
+        <HCardDetail
+          columns={1}
+          label="Email"
+        >
+          <div
+            className="detail detail--columns-1"
+          >
+            <dt
+              className="detail__label"
+            >
+              Email
+            </dt>
+            <dd
+              className="detail__value"
+            >
+              <HCardProperty
+                as="span"
+                className=""
+                name="email"
+                value=""
+              >
+                <span
+                  className="email"
+                  title=""
+                />
+              </HCardProperty>
+            </dd>
+          </div>
+        </HCardDetail>
+        <HCardDetail
+          columns={1}
+          label="Phone"
+        >
+          <div
+            className="detail detail--columns-1"
+          >
+            <dt
+              className="detail__label"
+            >
+              Phone
+            </dt>
+            <dd
+              className="detail__value"
+            >
+              <HCardProperty
+                as="span"
+                className=""
+                name="tel"
+                value=""
+              >
+                <span
+                  className="tel"
+                  title=""
+                >
+                  <HCardProperty
+                    as="span"
+                    className=""
+                    name="type"
+                    value="home"
+                  >
+                    <span
+                      className="type"
+                      title="home"
+                    >
+                      home
+                    </span>
+                  </HCardProperty>
+                </span>
+              </HCardProperty>
+            </dd>
+          </div>
+        </HCardDetail>
+        <HCardDetail
+          columns={1}
+          label="Address"
+        >
+          <div
+            className="detail detail--columns-1"
+          >
+            <dt
+              className="detail__label"
+            >
+              Address
+            </dt>
+            <dd
+              className="detail__value"
+            >
+              <HCardProperty
+                as="span"
+                className=""
+                name="street-address"
+                value=""
+              >
+                <span
+                  className="street-address"
+                  title=""
+                />
+              </HCardProperty>
+            </dd>
+          </div>
+        </HCardDetail>
+        <HCardDetail
+          columns={1}
+          label={null}
+        >
+          <div
+            className="detail detail--columns-1"
+          >
+            <dt
+              className="detail__label"
+            />
+            <dd
+              className="detail__value"
+            >
+              <HCardProperty
+                as="span"
+                className=""
+                name="locality"
+                value=""
+              >
+                <span
+                  className="locality"
+                  title=""
+                />
+              </HCardProperty>
+              <span />
+              <HCardProperty
+                abbreviation={null}
+                as="span"
+                className=""
+                name="region"
+                value=""
+              >
+                <span
+                  className="region"
+                  title=""
+                />
+              </HCardProperty>
+            </dd>
+          </div>
+        </HCardDetail>
+        <HCardDetail
+          columns={2}
+          label="Post Code"
+        >
+          <div
+            className="detail detail--columns-2"
+          >
+            <dt
+              className="detail__label"
+            >
+              Post Code
+            </dt>
+            <dd
+              className="detail__value"
+            >
+              <HCardProperty
+                as="span"
+                className=""
+                name="postal-code"
+                value=""
+              >
+                <span
+                  className="postal-code"
+                  title=""
+                />
+              </HCardProperty>
+            </dd>
+          </div>
+        </HCardDetail>
+        <HCardDetail
+          columns={2}
+          label="Country"
+        >
+          <div
+            className="detail detail--columns-2"
+          >
+            <dt
+              className="detail__label"
+            >
+              Country
+            </dt>
+            <dd
+              className="detail__value"
+            >
+              <HCardProperty
+                as="span"
+                className=""
+                name="country"
+                value=""
+              >
+                <span
+                  className="country"
+                  title=""
+                />
+              </HCardProperty>
+            </dd>
+          </div>
+        </HCardDetail>
+      </dl>
+    </HCardProperty>
+  </section>
+</HCard>
 `;

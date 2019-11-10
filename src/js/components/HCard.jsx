@@ -17,13 +17,13 @@ function HCard(props) {
     return (
         <section className="vcard">
             <header className="vcard__header">
-                <h2 className="vcard__heading fn" title={fullName}>{fullName}</h2>
+                <HCardProperty as="h2" name="fn" value={fullName} className="vcard__heading" />
                 <figure className="vcard__photo-wrapper">
                     <img alt="avatar" className="photo" src={avatarFileUrl} />
                 </figure>
             </header>
             <span className="vcard__banner">HCARD PREVIEW</span>
-            <dl className="vcard__details adr">
+            <HCardProperty as="dl" name="adr" className="vcard__details">
                 <HCardDetail label="Email">
                     <HCardProperty name="email" value={hCard.email} />
                 </HCardDetail>
@@ -47,7 +47,7 @@ function HCard(props) {
                 <HCardDetail label="Country" columns={2}>
                     <HCardProperty name="country" value={hCard.country} />
                 </HCardDetail>
-            </dl>
+            </HCardProperty>
         </section>
     );
 }

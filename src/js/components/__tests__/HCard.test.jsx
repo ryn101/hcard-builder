@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow, configure } from 'enzyme';
+import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import HCardDetails from '../../HCardDetails';
 import HCard from '../HCard';
@@ -20,7 +20,7 @@ describe('once rendered', () => {
 
     beforeEach(() => {
         hCard = new HCardDetails();
-        hCardNode = shallow(<HCard hCard={hCard} />);
+        hCardNode = mount(<HCard hCard={hCard} />);
     });
 
     it('renders with state correctly', () => {

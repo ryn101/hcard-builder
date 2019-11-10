@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 function FileUpload({
     id,
     children,
-    focusClass,
+    labelClass,
     onFileSelection,
 }) {
     return (
         <span className="file-upload-wrapper">
             <input id={id} onChange={onFileSelection} type="file" accept="image/*" />
-            <label htmlFor={id} className={focusClass}>{ children }</label>
+            <label htmlFor={id} className={labelClass}>{ children }</label>
         </span>
     );
 }
@@ -21,12 +21,12 @@ FileUpload.propTypes = {
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node,
     ]).isRequired,
-    focusClass: PropTypes.string,
+    labelClass: PropTypes.string,
     onFileSelection: PropTypes.func.isRequired,
 };
 
 FileUpload.defaultProps = {
-    focusClass: 'focusable',
+    labelClass: 'file-upload__label',
 };
 
 export default FileUpload;

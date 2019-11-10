@@ -15,6 +15,8 @@ exports[`once the hcard property with nesting has rendered renders with nested s
   title=""
 >
   <HCardProperty
+    as="span"
+    className=""
     name="nested-property"
     value="Nested Value"
   />
