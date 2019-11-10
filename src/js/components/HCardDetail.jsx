@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-
 const HCardDetail = ({ label, children, columns }) => (
     <div className={classNames('detail', `detail--columns-${columns}`)}>
         <dt className="detail__label">{ label }</dt>

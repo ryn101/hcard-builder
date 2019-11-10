@@ -9,7 +9,7 @@ configure({ adapter: new Adapter() });
 it('renders the file upload component without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-        <FileUpload onFileSelection={() => {}}>Upload</FileUpload>,
+        <FileUpload id="fileUploadId" onFileSelection={() => {}}>Upload</FileUpload>,
         div,
     );
     ReactDOM.unmountComponentAtNode(div);
@@ -18,21 +18,26 @@ it('renders the file upload component without crashing', () => {
 describe('once rendered', () => {
     let fileUploadedNode;
     let fileSelected;
+    let fileInput;
+    const fileUploadId = 'fileUploadId';
 
     beforeEach(() => {
         fileSelected = jest.fn();
         fileUploadedNode = shallow(
-            <FileUpload onFileSelection={fileSelected}>Upload</FileUpload>,
+            <FileUpload id={fileUploadId} onFileSelection={fileSelected}>Upload</FileUpload>,
         );
+        fileInput = fileUploadedNode.find('input');
     });
 
     it('renders with state correctly', () => {
         expect(fileUploadedNode).toMatchSnapshot();
     });
 
-    it('calls on file selection method on file change', () => {
-        const fileInput = fileUploadedNode.find('input');
+    it('passes down the id attribute to the file input', () => {
+        expect(fileInput.prop('id')).toEqual(fileUploadId);
+    });
 
+    it('calls on file selection method on file change', () => {
         fileInput.simulate('change', {});
         expect(fileSelected).toHaveBeenCalledTimes(1);
     });

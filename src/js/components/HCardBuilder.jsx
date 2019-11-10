@@ -49,7 +49,7 @@ class HCardBuilderComponent extends Component {
                     </FormSection>
                     <div className="flex-row flex-row--columns-2">
                         <div className="flex-row__column form__button-wrapper">
-                            <FileUpload onFileSelection={this.onAvatarFileSelected}>
+                            <FileUpload id="avatarFileUpload" onFileSelection={this.onAvatarFileSelected}>
                                 <Button as="span">Upload Avatar</Button>
                             </FileUpload>
                         </div>

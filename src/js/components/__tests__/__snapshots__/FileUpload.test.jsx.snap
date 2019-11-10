@@ -6,13 +6,13 @@ exports[`once rendered renders with state correctly 1`] = `
 >
   <input
     accept="image/*"
-    id="avatarFile"
+    id="fileUploadId"
     onChange={[MockFunction]}
     type="file"
   />
   <label
     className="focusable"
-    htmlFor="avatarFile"
+    htmlFor="fileUploadId"
   >
     Upload
   </label>
