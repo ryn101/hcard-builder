@@ -2,7 +2,7 @@ hCard Builder
 =================
 A simple React application for generating a hCard preview which adheres to the [hCard microformat](http://microformats.org/wiki/hcard)
 
-#### Project philosophy
+### Project philosophy
 
 Given the task of creating a hCard Builder that conforms to the specification and promotes re-usability and semantically 
 correct markup, this project was designed to fulfill that.
@@ -24,15 +24,15 @@ If yes was answered to any of the above questions, it must then be decided:
 
 With that criteria in mind, the following components were created:
 
-##### HCard
+#### hCard
 Presentational component for displaying the hCard preview. Accepts a HCardDetails object who's properties are then bound to the HTML.
 
-##### HCard Detail
+#### hCard Detail
 Presentational component used to wrap up the HTML of each hCard preview detail section. It supports specifying
 the label of the section and also how many columns the row that the component is on within the hCard should have. Acting 
 as a wrapper for details, it requires child content to additionally be specified.
 
-##### HCard Property
+#### hCard Property
 While effectively presentational, this components goal is to manage a requirement of the hCard specification in that each
 hCard property should exist as a class on the immediate parent of the hCard property value. It accepts a `name` and a `value`
 property. The name is applied as a class while the value becomes the visible text. In addition, an `abbreviation` property
@@ -43,7 +43,7 @@ Due to the nature of specific hCard properties requiring nested properties, the 
 Finally, the component allows the specification of the property elements HTML tag through the `as` property. By default this is
 set to `<span></span>`
 
-##### HCard Builder
+#### hCard Builder
 The main container component of the application. This houses the pages title and interactive form elements and supplies
 a clean event handling API on top of the native hCard form event handlers. This API consists of three event handlers, each translating the 
 underlying event's raw data into data that's directly consumable. These events are:
@@ -55,20 +55,20 @@ underlying event's raw data into data that's directly consumable. These events a
   * Fires when the form is submitted. Unlike the other event handlers, no extra translation is applied to the event data
   and remains as the native `submit` data object. 
 
-##### Button 
+#### Button 
 Simple wrapper for a button-like element which provides options for styling in different colours. The buttons element
 HTML tag can be specified via the `as` property, defaults to `<button />`
 
-##### File Upload
+#### File Upload
 Wrapper for the native file input element which provides the ability to customise the file selection button through
 supplying as a child element. Supports a `labelClass` attribute for styling the label element and a
 `onFileSelection` function which fires once a file has been selected.
 
-##### Form Section
+#### Form Section
 Presentational component representing a section of a form. Supports a `title` property and as a wrapper also requires
 child content to be specified.
 
-##### Form Field
+#### Form Field
 Container component that acts as a wrapper for the creation of a label and it's associated input field. 
 
 Supports container specific properties of `label` and `fieldId`. `label` simply populates the associated input label while `fieldId`
